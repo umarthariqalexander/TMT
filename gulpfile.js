@@ -1,11 +1,19 @@
 'use strict';
 var gulp = require("gulp");
 var sass = require("gulp-sass");
+const fontmin = require('gulp-fontmin');
 
 
-gulp.task('sass-conversion', function(){
-    gulp.start('sass', 'sass:watch')
+gulp.task('tasks', function(){
+    gulp.start('fontmin','sass', 'sass:watch')
 });
+
+
+gulp.task('fontmin', () =>
+    gulp.src(__dirname+'/styles/myfonts/*.ttf')
+        .pipe(fontmin())
+        .pipe(gulp.dest('dist/fonts'))
+);
 
 gulp.task('sass', function(){
     return gulp.src('./styles/*.scss')

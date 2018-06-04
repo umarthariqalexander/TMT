@@ -14,6 +14,8 @@ app.use('/images', express.static('images'));
 //app.use('/styles/fonts', express.static(path.join(__dirname,'/dist/fonts/')));
 app.use('/pages', express.static(path.join(__dirname,'/views/pages')));
 app.use('/scripts', express.static(path.join(__dirname,'/scripts/')));
+app.use('/fonts', express.static(path.join(__dirname,'/dist/fonts/')));
+app.use('/directives/', express.static(path.join(__dirname,'/scripts/directives/')));
 app.use('/dist', express.static(path.join(__dirname,'/dist/')));
 
 app.get('/', (req, res)=>{

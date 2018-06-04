@@ -1,0 +1,11 @@
+@import 'colors.scss';
+
+.tmt-header-wrapper{
+    background-color: $header-green;
+    color: white;
+    padding: 30px 50px;
+    .tmt-header{
+        text-align: center;
+        font-size: 24px;
+    }
+}
