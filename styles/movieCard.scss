@@ -1,0 +1,46 @@
+@import 'colors';
+.checked{
+    color: orange;
+}
+.movie-card-wrapper{
+    width: 250px;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid $grey_eee;
+    border-radius: 4px;
+    img{
+        width: 250px;
+    }
+    .movie-info-container{
+        padding: 5px 8px;
+        .movie-name-rating{
+            .movie-name{
+                font-size: 14px;
+                display: inline-block;
+            }
+            .rating{
+                float: right;
+                display: inline-block;
+                .fa{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    .actor-details-certificate{
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-bottom: 5px;
+        .actor-details{
+            font-size: 12px;
+            display: inline-block;
+        }
+        .certificate{
+            font-size: 12px;
+            display: inline-block;
+            float:right;
+            position: relative;
+            top: 5px;
+        }
+    }
+}
