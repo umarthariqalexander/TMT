@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamil Tube</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  </head>
+  <body>
+        <h1>Welcome to Tamil Tube!!!</h1>
+          <% movieList.forEach((movie)=>{ %>
+            <iframe width="560" height="315" src="<%= movie.item %>" frameborder="0" allowfullscreen></iframe>
+          <% }); %>
+  </body>
+</html>
