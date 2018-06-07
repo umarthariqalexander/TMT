@@ -1,29 +1,23 @@
-@font-face{
-    font-family: Circular-Book;
-    src: url('./fonts/Circular-Book.ttf');
-  }
-  
-@font-face{
-    font-family: Circular-Light;
-    src: url('./fonts/Circular-Light.ttf');
-  }
-  
-  @font-face{
-    font-family: Circular-Black;
-    src: url('./fonts/Circular-Black.ttf');
-  }
-  
-  @font-face{
-    font-family: Circular-Medium;
-    src: url('./fonts/Circular-Medium.ttf');
-  }
-@import 'colors.scss';
-  body{
-    font-family: 'Circular-Light', sans-serif;
-    margin: 0;
-    background-color: $background-white; 
-   }
-
-@import 'header.scss';
-@import 'movieCard.scss';
-
+.tmt-app{
+    .tmt-app-header{
+        position: fixed;
+        width: 100%;
+    }
+    .tmt-body-wrapper{
+        padding-top: 120px;
+        .tmt-movie-list-wrapper{
+            margin: auto;
+            width: 92%;
+            padding-left: 30px;
+            .tmt-movie-wrapper{
+                display: inline-block;
+                margin-right: 10px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+            .tmt-movie-wrapper:hover{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+    }
+}

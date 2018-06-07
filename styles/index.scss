@@ -1,0 +1,30 @@
+@font-face{
+    font-family: Circular-Book;
+    src: url('./fonts/Circular-Book.ttf');
+  }
+  
+@font-face{
+    font-family: Circular-Light;
+    src: url('./fonts/Circular-Light.ttf');
+  }
+  
+  @font-face{
+    font-family: Circular-Black;
+    src: url('./fonts/Circular-Black.ttf');
+  }
+  
+  @font-face{
+    font-family: Circular-Medium;
+    src: url('./fonts/Circular-Medium.ttf');
+  }
+@import 'colors.scss';
+  body{
+    font-family: 'Circular-Light', sans-serif;
+    margin: 0;
+    background-color: $background-white; 
+   }
+
+
+@import 'header.scss';
+@import 'movieCard.scss';
+@import 'main.scss';
