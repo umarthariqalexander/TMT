@@ -1,6 +1,7 @@
 angular.module("tmt")
 .controller("mainCtrl", function($scope){
     $scope.movieObject = [{
+        id:'iBnGsPqI5x8',
         movieName: 'Anwar',
         rating: 3,
         actor: 'Siddharth Koirala',
@@ -49,5 +50,6 @@ angular.module("tmt")
         actress: 'Nauheed Cyrusi.',
         certificate: 'U/A'
     }];
+    $scope.movie_ids = ['iBnGsPqI5x8'];
     $scope.movie = "something for movie";
 });
