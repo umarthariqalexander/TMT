@@ -24,5 +24,8 @@ app.use('/dist', express.static(path.join(__dirname,'/dist/')));
 app.get('/', (req, res) => {
   res.sendfile('./views/multi_rfq.html');
 });
+// app.get('/', (req, res) => {
+//   res.sendfile('./views/multi_rfq.html');
+// });
 
 app.listen(5000);
