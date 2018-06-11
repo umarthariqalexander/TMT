@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.sendfile('./views/multi_rfq.html');
 });
 // app.get('/', (req, res) => {
-//   res.sendfile('./views/multi_rfq.html');
+//   res.sendfile('./views/itemized_rfq.html');
 // });
 
 app.listen(5000);
