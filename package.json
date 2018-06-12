@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run server & npm run tasks",
     "server": "nodemon",
+    "node-test":"node inspect app.js",
     "build": "rimraf ./dist;",
     "tasks": "gulp tasks"
   },

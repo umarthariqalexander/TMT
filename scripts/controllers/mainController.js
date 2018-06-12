@@ -1,5 +1,5 @@
 angular.module("tmt")
-.controller("mainCtrl", function($scope){
+.controller("mainCtrl", function($scope, $http){
     $scope.movieObject = [{
         id:'iBnGsPqI5x8',
         movieName: 'Anwar',
@@ -50,6 +50,34 @@ angular.module("tmt")
         actress: 'Nauheed Cyrusi.',
         certificate: 'U/A'
     }];
-    $scope.movie_ids = ['iBnGsPqI5x8'];
     $scope.movie = "something for movie";
+    $scope.movie = {};
+    $scope.movieForm = {};
+    $scope.insertMovieRecord = function(){
+        let movieForm = $scope.movieForm.movieRecordInputForm;
+        if(movieForm.$valid){
+            let certificate = $scope.movie.certificate;
+            if(!$scope.movie.certificate){
+                certificate = '-';
+            }
+            let rating = $scope.movie.rating;
+            if(!$scope.movie.rating){
+                rating = 0;
+            }
+            var movieObject = {
+            movieName: $scope.movie.name,
+            actor: $scope.movie.actor,
+            actress: $scope.movie.actress,
+            rating: rating,
+            certificate: certificate
+        }
+        let data = movieObject;
+        // $http.post('/insert', data).then(function(response){
+        //     console.log(response);
+        // });
+        $scope.movie = {};
+        }
+        
+        
+    };
 });

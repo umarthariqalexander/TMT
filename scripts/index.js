@@ -5,5 +5,8 @@ app.config(function($routeProvider){
     .when("/", {
         templateUrl: "pages/main.htm"
     })
+    .when("/admin", {
+        templateUrl: "pages/admin.htm"
+    })
 });
 

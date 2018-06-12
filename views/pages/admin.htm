@@ -1,0 +1,30 @@
+<div class="admin-page-wrapper" style="text-align: center;">
+    <h2>Admin Panel</h2>
+    <form name="movieForm.movieRecordInputForm" ng-submit="insertMovieRecord(movieRecordInputForm)" novalidate>
+        <div style="margin-bottom: 20px;">
+            <div>Movie Name</div>
+            <input ng-model="movie.name" type="text" required>
+        </div>
+        <div style="margin-bottom: 20px;">
+                <div for="">Actor Name </div>
+                <input ng-model="movie.actor" type="text" required>
+        </div>
+        <div style="margin-bottom: 20px;">
+                <div>Actress Name</div>
+                <input ng-model="movie.actress" type="text" required>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+                <div for="">Rating</div>
+                <input ng-model="movie.rating" type="text">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+                <div for="">Certificate</div>   
+                <input ng-model="movie.certificate" type="text" required>
+        </div>
+        <div>
+            <input type="submit" style="width: inherit;">
+        </div>
+    </form>
+</div>
