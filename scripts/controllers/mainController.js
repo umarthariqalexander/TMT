@@ -65,6 +65,7 @@ angular.module("tmt")
                 rating = 0;
             }
             var movieObject = {
+            urlId: $scope.movie.urlId,
             movieName: $scope.movie.name,
             actor: $scope.movie.actor,
             actress: $scope.movie.actress,
@@ -72,9 +73,9 @@ angular.module("tmt")
             certificate: certificate
         }
         let data = movieObject;
-        // $http.post('/insert', data).then(function(response){
-        //     console.log(response);
-        // });
+        $http.post('/insert', data).then(function(response){
+            console.log(response);
+        });
         $scope.movie = {};
         }
         

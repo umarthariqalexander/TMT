@@ -2,6 +2,10 @@
     <h2>Admin Panel</h2>
     <form name="movieForm.movieRecordInputForm" ng-submit="insertMovieRecord(movieRecordInputForm)" novalidate>
         <div style="margin-bottom: 20px;">
+                <div>Movie Id</div>
+                <input ng-model="movie.urlId" type="text" required>
+        </div>
+        <div style="margin-bottom: 20px;">
             <div>Movie Name</div>
             <input ng-model="movie.name" type="text" required>
         </div>

@@ -20,7 +20,9 @@ var insertOne = function(request){
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var tmt = db.db('tmt');
-    var requestObj = { movieName: request.movieName, 
+    var requestObj = { 
+      urlId: request.urlId,
+      movieName: request.movieName, 
       actor: request.actor, 
       actress: request.actress, 
       rating: request.rating, 
