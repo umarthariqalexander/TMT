@@ -1,7 +1,22 @@
 .admin-page-wrapper{
-    text-align: center;
     input{
         height: 25px;
-        width: 25%;
+        width: 100%;
+    }
+    .form-wrapper{
+        display: inline-block;
+        width: 35%;
+        padding-left: 20px;
+    }
+    .movie-detail-wrapper{
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 20px;
+        .poster-wrapper{
+            display: inline-block;
+        }
+        .video-wrapper{
+            display: inline-block;
+        }
     }
 }

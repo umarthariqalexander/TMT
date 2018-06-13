@@ -10,3 +10,8 @@ app.config(function($routeProvider){
     })
 });
 
+angular.module("tmt").filter('trustThisUrl', ["$sce", function ($sce) {
+    return function (val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}]);

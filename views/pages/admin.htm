@@ -1,34 +1,48 @@
-<div class="admin-page-wrapper" style="text-align: center;">
-    <h2>Admin Panel</h2>
-    <form name="movieForm.movieRecordInputForm" ng-submit="insertMovieRecord(movieRecordInputForm)" novalidate>
-        <div style="margin-bottom: 20px;">
-                <div>Movie Id</div>
-                <input ng-model="movie.urlId" type="text" required>
-        </div>
-        <div style="margin-bottom: 20px;">
-            <div>Movie Name</div>
-            <input ng-model="movie.name" type="text" required>
-        </div>
-        <div style="margin-bottom: 20px;">
-                <div for="">Actor Name </div>
-                <input ng-model="movie.actor" type="text" required>
-        </div>
-        <div style="margin-bottom: 20px;">
-                <div>Actress Name</div>
-                <input ng-model="movie.actress" type="text" required>
-        </div>
+<div class="admin-page-wrapper">
+    <h2 style="text-align: center;">Admin Panel</h2>
+    <div class="form-wrapper">
+        <form name="movieForm.movieRecordInputForm" ng-submit="insertMovieRecord(movieRecordInputForm)" novalidate>
+            <div style="margin-bottom: 20px;">
+                    <div>Imdb Id</div> 
+                    <input ng-model="movie.imdbUrl" style="width: 40%;" type="text" required> <button ng-click="hitImdbAPI()">Search</button>
+            </div>
+            <div style="margin-bottom: 20px;">
+                    <div>Youtube Id </div> 
+                    <input ng-model="movie.videoUrl" style="width: 40%;" type="text" required> <button ng-click="checkVideoExistance()">check</button>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <div>Movie Name</div>
+                <input ng-model="movie.name" type="text" required>
+            </div>
+            <div style="margin-bottom: 20px;">
+                    <div for="">Actor Name </div>
+                    <input ng-model="movie.actor" type="text" required>
+            </div>
+            <div style="margin-bottom: 20px;">
+                    <div>Actress Name</div>
+                    <input ng-model="movie.actress" type="text" required>
+            </div>
 
-        <div style="margin-bottom: 20px;">
-                <div for="">Rating</div>
-                <input ng-model="movie.rating" type="text">
-        </div>
+            <div style="margin-bottom: 20px;">
+                    <div for="">Rating</div>
+                    <input ng-model="movie.rating" type="text">
+            </div>
 
-        <div style="margin-bottom: 20px;">
-                <div for="">Certificate</div>   
-                <input ng-model="movie.certificate" type="text" required>
+            <div style="margin-bottom: 20px;">
+                    <div for="">Certificate</div>   
+                    <input ng-model="movie.certificate" type="text" required>
+            </div>
+            <div>
+                <input type="submit" style="width: inherit;">
+            </div>
+        </form>
+    </div>
+    <div class="movie-detail-wrapper">
+        <div class="poster-wrapper">
+            <img src="{{movie.posterUrl}}" width="300" height="315" alt="">
         </div>
-        <div>
-            <input type="submit" style="width: inherit;">
+        <div class="video-wrapper">
+            <iframe ng-if="movie.fullVideoUrl" width="420" height="315" src="{{movie.fullVideoUrl | trustThisUrl}}"></iframe>
         </div>
-    </form>
+    </div>
 </div>
