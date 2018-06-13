@@ -5,31 +5,36 @@ angular.module("tmt")
         youtube_data_api_key : 'AIzaSyCx1clO_m-n5RrM4kWHmlhhEFdYNeDv6Js',
         omdb_api_key: 'PlzBanMe'
     }
+    $scope.movieList = {};
     $scope.movieForm = {};
+    $scope.getMovieList = function(){
+        $http.get('/getMovieList').then(function(response){
+            $scope.movieList = response.data;
+        });
+    };
+    $scope.getMovieList();
     $scope.insertMovieRecord = function(){
         let movieForm = $scope.movieForm.movieRecordInputForm;
         if(movieForm.$valid){
-            let certificate = $scope.movie.certificate;
-            if(!$scope.movie.certificate){
-                certificate = '-';
-            }
             let rating = $scope.movie.rating;
             if(!$scope.movie.rating){
                 rating = 0;
             }
             var movieObject = {
-            urlId: $scope.movie.urlId,
+            urlId: $scope.movie.videoUrl,
             movieName: $scope.movie.name,
-            actor: $scope.movie.actor,
-            actress: $scope.movie.actress,
+            actors: $scope.movie.actors,
             rating: rating,
-            certificate: certificate
+            director: $scope.movie.director,
+            year: $scope.movie.year,
+            posterUrl: $scope.movie.posterUrl
         }
         let data = movieObject;
+        console.log(data);
         $http.post('/insert', data).then(function(response){
             console.log(response);
         });
-        $scope.movie = {};
+        // $scope.movie = {};
         };
     };
     $scope.checkVideoExistance = function(){
@@ -47,6 +52,7 @@ angular.module("tmt")
                 $scope.movie.name = response.data.Title;
                 $scope.movie.rating = response.data.imdbRating;
                 $scope.movie.year = response.data.Year;
+                $scope.movie.actors = response.data.Actors;
                 $scope.movie.director = response.data.Director;
             });
         }

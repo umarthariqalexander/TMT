@@ -3,13 +3,15 @@
     color: orange;
 }
 .movie-card-wrapper{
-    width: 250px;
+    width: 220px;
+    height: 350px;
     display: inline-block;
     background-color: white;
     border: 1px solid $grey_eee;
     border-radius: 4px;
     img{
-        width: 250px;
+        width: 220px;
+        height: 250px;
     }
     .movie-info-container{
         padding: 5px 8px;
@@ -19,11 +21,11 @@
                 display: inline-block;
             }
             .rating{
-                float: right;
                 display: inline-block;
-                .fa{
-                    font-size: 10px;
-                }
+                font-size: 12px;
+                float: right;
+                position: relative;
+                top: 5px;
             }
         }
     }
@@ -33,14 +35,14 @@
         padding-bottom: 5px;
         .actor-details{
             font-size: 12px;
-            display: inline-block;
+            // display: inline-block;
         }
-        .certificate{
-            font-size: 12px;
-            display: inline-block;
-            float:right;
-            position: relative;
-            top: 5px;
-        }
+        // .certificate{
+        //     font-size: 12px;
+        //     display: inline-block;
+        //     float:right;
+        //     position: relative;
+        //     top: 5px;
+        // }
     }
 }

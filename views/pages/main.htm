@@ -4,10 +4,9 @@
     </div>
     <div class="tmt-body-wrapper">
         <div class="tmt-movie-list-wrapper">
-                <div ng-repeat="movie in movieObject" class="tmt-movie-wrapper">
-                      <a href="https://www.youtube.com/watch?v=iBnGsPqI5x8" target="_blank"><movie-card  movie-info="movie"></movie-card></a>
-                </div> 
-                <button ng-click="insertMovieRecord()"></button>    
+                <div ng-repeat="movie in movieList" class="tmt-movie-wrapper">
+                      <a href="https://www.youtube.com/watch?v={{movie.urlId}}" target="_blank"><movie-card  movie-info="movie"></movie-card></a>
+                </div>    
         </div>
     </div>
 </div>

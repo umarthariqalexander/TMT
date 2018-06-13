@@ -1,21 +1,24 @@
 <div class="movie-card-wrapper">
     <div class="image-container">
-        <img src="http://kb4images.com/images/image/37185176-image.jpg" alt="">
+        <img src="{{movieInfo.posterUrl}}" alt="">
     </div>
     <div class="movie-info-container">
         <div class="movie-name-rating">
             <div class="movie-name">
                 <span>{{movieInfo.movieName}}</span>
             </div>
-            <div class="rating">
+            <!-- <div class="rating">
                 <span ng-repeat="x in movieRating track by $index" class="fa fa-star" ng-class="{'checked': x.mark}"></span>
+            </div> -->
+            <div class="rating">
+                {{movieInfo.rating}}
             </div>
         </div>
     </div>
     <div class="actor-details-certificate">
         <div class="actor-details">
-            {{movieInfo.actor}}, {{movieInfo.actress}}
+            {{movieInfo.actors}}
         </div>
-        <div class="certificate">{{movieInfo.certificate}}</div>
+        <!-- <div class="certificate">{{movieInfo.certificate}}</div> -->
     </div>
 </div>

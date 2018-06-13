@@ -17,22 +17,7 @@ var dbConnect = function(){
 
 
 var insertOne = function(request){
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var tmt = db.db('tmt');
-    var requestObj = { 
-      urlId: request.urlId,
-      movieName: request.movieName, 
-      actor: request.actor, 
-      actress: request.actress, 
-      rating: request.rating, 
-      certificate: request.certificate };
-      tmt.collection("tamilMovies").insertOne(requestObj, function(err, res) {
-      if (err) {console.log(err); throw err;}
-      console.log("1 document inserted");
-      db.close();
-    });
-  });
+  
 };
 
 //============================================ App Settings ============================================
@@ -55,11 +40,30 @@ app.get('/', (req, res)=>{
   res.render('index',{movieList});
 });
 
+app.get('/getMovieList', (req, res)=>{
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var tmt = db.db('tmt');
+      tmt.collection("tamilMovies").find({}).toArray (function(err, result) {
+      if (err) {console.log(err); throw err;}
+      res.send(result);
+      db.close();
+    });
+  });
+});
+
 app.post('/insert', (req, res)=>{
   console.log(req.body);
-  insertOne(req.body);
-  console.log('inserting the record .....');
-  res.send('data inserting in progress');
+  // insertOne(req.body);
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var tmt = db.db('tmt');
+      tmt.collection("tamilMovies").insertOne(req.body, function(err, result) {
+      if (err) {console.log(err); throw err;}
+      res.send('1 document inserted');
+      db.close();
+    });
+  });
 });
 
 app.listen(5000);

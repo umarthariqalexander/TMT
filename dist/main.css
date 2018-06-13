@@ -6,10 +6,11 @@
   padding-top: 120px; }
   .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper {
     margin: auto;
-    width: 82%; }
+    width: 95%;
+    padding-left: 15px; }
     .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .tmt-movie-wrapper {
       display: inline-block;
-      margin-right: 10px;
+      margin-right: 20px;
       margin-bottom: 20px;
       border-radius: 5px; }
       .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .tmt-movie-wrapper a {
