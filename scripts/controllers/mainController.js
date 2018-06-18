@@ -8,6 +8,8 @@ angular.module("tmt")
         $scope.movieList = {};
         $scope.movieForm = {};
         $scope.urlToDelete = {};
+        $scope.selectedFilter = {};
+        $scope.movieFilters = [{desc: 'rating - high to low', filterId: 'RATING_HIGH_TO_LOW'}, {desc: 'year - latest to old', filterId: 'YEAR_LATEST_TO_OLD'}];
         $scope.getMovieList = function () {
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
@@ -18,6 +20,12 @@ angular.module("tmt")
             if ($scope.movie.videoUrl) {
                 $scope.movie.fullVideoUrl = "https://www.youtube.com/embed/" + $scope.movie.videoUrl;
             }
+        };
+        $scope.applyFilter = function(item){
+            console.log(item);
+            $http.get('/getMovieList', {params: {year: 1}}).then(function (response) {
+                $scope.movieList = response.data;
+            });
         };
         $scope.hitImdbAPI = function () {
             if ($scope.movie.imdbUrl) {

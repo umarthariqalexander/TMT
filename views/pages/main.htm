@@ -3,6 +3,12 @@
         <tmt-header></tmt-header>
     </div>
     <div class="tmt-body-wrapper">
+        <div class="tmt-filter-wrapper">
+            <select ng-model="selectedFilter" ng-change="applyFilter(selectedFilter)">
+                <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
+            </select>
+            {{selectedFilter}}
+        </div>
         <div class="tmt-movie-list-wrapper">
                 <div ng-repeat="movie in movieList" class="tmt-movie-wrapper">
                       <a href="https://www.youtube.com/watch?v={{movie.urlId}}" target="_blank"><movie-card  movie-info="movie" index="$index"></movie-card></a>

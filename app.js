@@ -41,10 +41,16 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/getMovieList', (req, res)=>{
+  let query = {};
+  if(req.query.year){
+    query = {
+      year: JSON.parse(req.query.year)
+    }
+  }
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var tmt = db.db('tmt');
-      tmt.collection("tamilMovies").find({}).toArray (function(err, result) {
+      tmt.collection("tamilMovies").find({}).sort(query).toArray (function(err, result) {
       if (err) {console.log(err); throw err;}
       res.send(result);
       db.close();
