@@ -11,7 +11,7 @@
                 <span ng-repeat="x in movieRating track by $index" class="fa fa-star" ng-class="{'checked': x.mark}"></span>
             </div> -->
             <div class="rating">
-                {{movieInfo.rating}}
+                <div id="{{'circle-'+index}}" class="circle"></div>
             </div>
         </div>
     </div>

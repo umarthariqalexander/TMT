@@ -18,7 +18,6 @@
         .movie-name-rating{
             .movie-name{
                 font-size: 16px;
-                font-family: 'Circular-Book';
                 display: inline-block;
             }
             .rating{
@@ -36,14 +35,9 @@
         padding-bottom: 5px;
         .actor-details{
             font-size: 12px;
-            // display: inline-block;
         }
-        // .certificate{
-        //     font-size: 12px;
-        //     display: inline-block;
-        //     float:right;
-        //     position: relative;
-        //     top: 5px;
-        // }
+    }
+    .circles-wrp{
+        top: -7px;
     }
 }

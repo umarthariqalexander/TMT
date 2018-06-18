@@ -1,21 +1,37 @@
 angular.module("tmt")
-.directive("movieCard", function(){
+.directive("movieCard", ['$interval', function($interval){
+    var createCircle = function(scope){
+        if(document.getElementById('circle-'+scope.index)){
+            circle = Circles.create({
+                id:                  'circle-'+scope.index,
+                radius:              15,
+                value:               scope.movieInfo.rating * 10,
+                maxValue:            100,
+                width:               2,
+                text:                function(value){return value/10;},
+                colors:              ['#DEDEDE', '#50C878'],
+                duration:            500,
+                wrpClass:            'circles-wrp',
+                textClass:           'circles-text',
+                valueStrokeClass:    'circles-valueStroke',
+                maxValueStrokeClass: 'circles-maxValueStroke',
+                styleWrapper:        true,
+                styleText:           true
+              });
+            $interval.cancel(scope.promise);
+        }
+    }
     return{
         restrict: 'E',
         scope:{
-            movieInfo:'='
+            movieInfo:'=',
+            index: '='
         },
         link: function(scope, elem ,attr){
-            // var movieRating = [{mark: 0}, {mark:0}, {mark: 0}, {mark: 0}, {mark: 0}];
-            // var rating = scope.movieInfo.rating;
-            // scope.movieRating = movieRating.map(function(ele){
-            //     if(rating > 0){
-            //         ele.mark = 1;
-            //     }
-            //     rating = rating-1;
-            //     return ele;
-            // });
+           scope.promise = $interval(function(){
+               createCircle(scope);
+            }, 500);
         },
         templateUrl: "./directives/movieCard/index.htm"
     }
-});
+}]);
