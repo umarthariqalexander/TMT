@@ -1,14 +1,15 @@
 <div class="admin-page-wrapper">
     <h2 style="text-align: center;">Admin Panel</h2>
     <div class="form-wrapper">
-        <form name="movieForm.movieRecordInputForm" ng-submit="insertMovieRecord(movieRecordInputForm)" novalidate>
+        <form name="movieForm.movieRecordInputForm" novalidate>
             <div style="margin-bottom: 20px;">
                     <div>Imdb Id</div> 
-                    <input ng-model="movie.imdbUrl" style="width: 40%;" type="text" required> <button ng-click="hitImdbAPI()">Search</button>
+                    <input ng-model="movie.imdbUrl" style="width: 40%;" type="text" required> <button type="click" ng-click="hitImdbAPI()">Search</button>
             </div>
             <div style="margin-bottom: 20px;">
                     <div>Youtube Id </div> 
-                    <input ng-model="movie.videoUrl" style="width: 40%;" type="text" required> <button ng-click="checkVideoExistance()">check</button>
+                    <input ng-model="movie.videoUrl" style="width: 40%;" type="text" required> 
+                    <button type="click" ng-click="getVideo()">Check</button>
             </div>
             <div style="margin-bottom: 20px;">
                 <div>Movie Name</div>
@@ -22,8 +23,12 @@
                     <div for="">Rating</div>
                     <input ng-model="movie.rating" type="text">
             </div>
+            <div style="margin-bottom: 20px;">
+                    <div for="">Poster URL</div>
+                    <input ng-model="movie.posterUrl" type="text">
+            </div>
             <div>
-                <input type="submit" style="width: inherit;">
+                <input type="submit" ng-click="addNewMovie(movieRecordInputForm)" style="width: inherit;">
             </div>
         </form>
     </div>

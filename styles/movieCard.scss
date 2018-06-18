@@ -4,7 +4,7 @@
 }
 .movie-card-wrapper{
     width: 220px;
-    height: 360px;
+    height: 365px;
     display: inline-block;
     background-color: white;
     border: 1px solid $grey_eee;
@@ -19,6 +19,10 @@
             .movie-name{
                 font-size: 16px;
                 display: inline-block;
+                text-overflow: ellipsis;
+                width: 170px;
+                white-space: nowrap;
+                overflow: hidden;
             }
             .rating{
                 display: inline-block;
