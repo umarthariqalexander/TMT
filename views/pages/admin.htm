@@ -1,5 +1,7 @@
 <div class="admin-page-wrapper">
     <h2 style="text-align: center;">Admin Panel</h2>
+    <h2 style="text-align: center;">=================================================================================================</h2>
+    <h2 style="text-align: center;">Insert Movie Record</h2>
     <div class="form-wrapper">
         <form name="movieForm.movieRecordInputForm" novalidate>
             <div style="margin-bottom: 20px;">
@@ -38,6 +40,19 @@
         </div>
         <div class="video-wrapper">
             <iframe ng-if="movie.fullVideoUrl" width="420" height="315" src="{{movie.fullVideoUrl | trustThisUrl}}"></iframe>
+        </div>
+    </div>
+    <div>
+        <h2 style="text-align: center;">=================================================================================================</h2>
+        <h2 style="text-align: center;">Delete Movie Record</h2>
+        <div style="margin-bottom: 50px; padding-left: 20px;">
+                <div><input style="width: 25%; margin-bottom: 10px;" type="text" ng-model="urlToDelete.youtubeUrl"></div>
+                <button type="button" ng-click="deleteMovie()">
+                    Delete Movie
+                </button>
+                <div id="resultOfDeleteOperation">
+
+                </div>
         </div>
     </div>
 </div>

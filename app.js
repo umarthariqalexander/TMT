@@ -52,7 +52,7 @@ app.get('/getMovieList', (req, res)=>{
   });
 });
 
-app.post('/insert', (req, res)=>{
+app.post('/insertMovie', (req, res)=>{
   console.log(req.body);
   // insertOne(req.body);
   MongoClient.connect(url, function(err, db) {
@@ -61,6 +61,19 @@ app.post('/insert', (req, res)=>{
       tmt.collection("tamilMovies").insertOne(req.body, function(err, result) {
       if (err) {console.log(err); throw err;}
       res.send('1 document inserted');
+      db.close();
+    });
+  });
+});
+
+app.delete('/deleteMovie', (req, res)=>{
+  MongoClient.connect(url, function(err, db) {
+    if (err) {res.send(err); throw err;}
+    var tmt = db.db('tmt');
+    var query = { urlId: req.body.url};
+      tmt.collection("tamilMovies").deleteOne(query, function(err, result) {
+      if (err) {res.send(err); throw err;}
+      res.send(result);
       db.close();
     });
   });

@@ -7,6 +7,7 @@ angular.module("tmt")
         }
         $scope.movieList = {};
         $scope.movieForm = {};
+        $scope.urlToDelete = {};
         $scope.getMovieList = function () {
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
@@ -51,10 +52,31 @@ angular.module("tmt")
                 }
                 let data = movieObject;
                 console.log(data);
-                $http.post('/insert', data).then(function (response) {
+                $http.post('/insertMovie', data).then(function (response) {
                     console.log(response);
                 });
                 $scope.movie = {};
             };
+        };
+        $scope.deleteMovie = function(){
+            let url = $scope.urlToDelete.youtubeUrl;
+            $http({
+                method: 'DELETE',
+                url: '/deleteMovie',
+                data: {
+                    url: url
+                },
+                headers: {
+                    'Content-type': 'application/json;charset=utf-8'
+                }
+            })
+            .then(function(response) {
+                if(response.data.n > 0){
+                    document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: green;">'+response.data.n+' record has been deleted successfully</span>';
+                }
+                else{
+                    document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: orange;">'+response.data.n+' record has been deleted</span>';
+                }
+            });
         };
     });
