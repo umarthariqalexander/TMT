@@ -42,10 +42,11 @@ app.get('/', (req, res)=>{
 
 app.get('/getMovieList', (req, res)=>{
   let query = {};
-  if(req.query.year){
-    query = {
-      year: JSON.parse(req.query.year)
-    }
+  if(Object.keys(req.query).length > 0){
+    query = req.query;
+    let key = Object.keys(query)[0];
+    let parsed_value = parseInt(Object.values(query)[0]);
+    query[key] = parsed_value;
   }
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -59,8 +60,6 @@ app.get('/getMovieList', (req, res)=>{
 });
 
 app.post('/insertMovie', (req, res)=>{
-  console.log(req.body);
-  // insertOne(req.body);
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var tmt = db.db('tmt');

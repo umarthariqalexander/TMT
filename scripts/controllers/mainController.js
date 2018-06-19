@@ -9,7 +9,12 @@ angular.module("tmt")
         $scope.movieForm = {};
         $scope.urlToDelete = {};
         $scope.selectedFilter = {};
-        $scope.movieFilters = [{desc: 'rating - high to low', filterId: 'RATING_HIGH_TO_LOW'}, {desc: 'year - latest to old', filterId: 'YEAR_LATEST_TO_OLD'}];
+        $scope.movieFilters = [
+            {desc: 'rating - high to low', filterId: 'RATING_HIGH_TO_LOW'}, 
+            {desc: 'rating - low to high', filterId: 'RATING_LOW_TO_HIGH'},
+            {desc: 'year - latest to old', filterId: 'LATEST_TO_OLD'},
+            {desc: 'year - old to latest', filterId: 'OLD_TO_LATEST'}
+        ];
         $scope.getMovieList = function () {
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
@@ -22,8 +27,24 @@ angular.module("tmt")
             }
         };
         $scope.applyFilter = function(item){
-            console.log(item);
-            $http.get('/getMovieList', {params: {year: 1}}).then(function (response) {
+            let query = {};
+            switch(item){
+                case 'RATING_HIGH_TO_LOW':
+                    query = {rating : -1};
+                    break;
+                case 'RATING_LOW_TO_HIGH':
+                    query = {rating : 1};
+                    break;
+                case 'LATEST_TO_OLD':
+                    query = {year: -1};
+                    break;
+                case 'OLD_TO_LATEST':
+                    query = {year: 1};
+                    break;
+                default:
+                    query = {};
+            }
+            $http.get('/getMovieList', {params: query} ).then(function (response) {
                 $scope.movieList = response.data;
             });
         };
