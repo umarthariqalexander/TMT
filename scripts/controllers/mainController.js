@@ -87,25 +87,30 @@ angular.module("tmt")
                 $scope.movie = {};
             };
         };
-        $scope.deleteMovie = function(){
-            let url = $scope.urlToDelete.youtubeUrl;
-            $http({
-                method: 'DELETE',
-                url: '/deleteMovie',
-                data: {
-                    url: url
-                },
-                headers: {
-                    'Content-type': 'application/json;charset=utf-8'
-                }
-            })
-            .then(function(response) {
-                if(response.data.n > 0){
-                    document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: green;">'+response.data.n+' record has been deleted successfully</span>';
-                }
-                else{
-                    document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: orange;">'+response.data.n+' record has been deleted</span>';
-                }
-            });
+        $scope.deleteMovie = function(url){
+            var result = prompt("Enter the password to delete this movie.", "");
+            if(result && result === 'tmt123'){
+                $http({
+                    method: 'DELETE',
+                    url: '/deleteMovie',
+                    data: {
+                        url: url
+                    },
+                    headers: {
+                        'Content-type': 'application/json;charset=utf-8'
+                    }
+                })
+                .then(function(response) {
+                    if(response.data.n > 0){
+                        document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: green;">'+response.data.n+' record has been deleted successfully</span>';
+                    }
+                    else{
+                        document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: orange;">'+response.data.n+' record has been deleted</span>';
+                    }
+                });
+            }
+            else{
+                document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: orange;">Invalid Password. You cant perform this operation</span>';
+            }
         };
     });
