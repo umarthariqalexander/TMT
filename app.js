@@ -48,6 +48,7 @@ app.get('/getMovieList', (req, res)=>{
     let parsed_value = parseInt(Object.values(query)[0]);
     query[key] = parsed_value;
   }
+  query.movieName = 1;
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var tmt = db.db('tmt');

@@ -83,6 +83,7 @@ angular.module("tmt")
                 console.log(data);
                 $http.post('/insertMovie', data).then(function (response) {
                     console.log(response);
+                    $scope.getMovieList();
                 });
                 $scope.movie = {};
             };
@@ -103,6 +104,7 @@ angular.module("tmt")
                 .then(function(response) {
                     if(response.data.n > 0){
                         document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: green;">'+response.data.n+' record has been deleted successfully</span>';
+                        $scope.getMovieList();
                     }
                     else{
                         document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: orange;">'+response.data.n+' record has been deleted</span>';

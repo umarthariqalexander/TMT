@@ -62,7 +62,7 @@
                     <td>option</td>
                 </thead>
                 <tbody style="background-color: #E8EDFD;">
-                        <tr style="height: 35px;" ng-repeat="record in movieList | filter:admin.searchMovieText">
+                        <tr style="height: 35px;" ng-repeat="record in movieList | filter:admin.searchMovieText | limitTo:10">
                                 <td>{{record.urlId}}</td>
                                 <td>{{record.movieName}}</td>
                                 <td>{{record.year}}</td>
