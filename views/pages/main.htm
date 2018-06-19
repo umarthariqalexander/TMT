@@ -4,10 +4,14 @@
     </div>
     <div class="tmt-body-wrapper">
         <div class="tmt-filter-wrapper">
-            <select ng-model="selectedFilter" ng-change="applyFilter(selectedFilter)">
-                <option selected disabled value>Filters</option>
-                <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
+            <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER')">
+                <option selected disabled value>Year Filter</option>
+                <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
             </select>
+            <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER')">
+                    <option selected disabled value>General Filters</option>
+                    <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
+                </select>
         </div>
         <div class="tmt-movie-list-wrapper">
                 <div ng-repeat="movie in movieList" class="tmt-movie-wrapper">

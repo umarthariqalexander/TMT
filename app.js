@@ -41,18 +41,22 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/getMovieList', (req, res)=>{
-  let query = {};
-  if(Object.keys(req.query).length > 0){
-    query = req.query;
-    let key = Object.keys(query)[0];
-    let parsed_value = parseInt(Object.values(query)[0]);
-    query[key] = parsed_value;
+  let filterQuery = {};
+  let sortQuery = {};
+  if(req.query.sort && Object.keys(JSON.parse(req.query.sort)).length > 0){
+    sortQuery = JSON.parse(req.query.sort);
+    let key = Object.keys(sortQuery)[0];
+    let parsed_value = parseInt(Object.values(sortQuery)[0]);
+    sortQuery[key] = parsed_value;
   }
-  query.movieName = 1;
+  sortQuery.movieName = 1;
+  if(req.query.filter && Object.keys(JSON.parse(req.query.filter)).length > 0){
+    filterQuery = JSON.parse(req.query.filter);
+  }
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var tmt = db.db('tmt');
-      tmt.collection("tamilMovies").find({}).sort(query).toArray (function(err, result) {
+      tmt.collection("tamilMovies").find(filterQuery).sort(sortQuery).toArray (function(err, result) {
       if (err) {console.log(err); throw err;}
       res.send(result);
       db.close();

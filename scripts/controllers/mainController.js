@@ -15,6 +15,11 @@ angular.module("tmt")
             {desc: 'year - latest to old', filterId: 'LATEST_TO_OLD'},
             {desc: 'year - old to latest', filterId: 'OLD_TO_LATEST'}
         ];
+        $scope.movieListQueries = {
+            sort: {},
+            filter: {}
+        };
+        $scope.yearList = [2011,2012,2013,2014,2015,2016,2017,2018];
         $scope.getMovieList = function () {
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
@@ -26,25 +31,29 @@ angular.module("tmt")
                 $scope.movie.fullVideoUrl = "https://www.youtube.com/embed/" + $scope.movie.videoUrl;
             }
         };
-        $scope.applyFilter = function(item){
-            let query = {};
-            switch(item){
-                case 'RATING_HIGH_TO_LOW':
-                    query = {rating : -1};
-                    break;
-                case 'RATING_LOW_TO_HIGH':
-                    query = {rating : 1};
-                    break;
-                case 'LATEST_TO_OLD':
-                    query = {year: -1};
-                    break;
-                case 'OLD_TO_LATEST':
-                    query = {year: 1};
-                    break;
-                default:
-                    query = {};
+        $scope.applyFilter = function(item, filterType){
+            if(filterType === 'RIGHT_FILTER'){
+                switch(item){
+                    case 'RATING_HIGH_TO_LOW':
+                    $scope.movieListQueries.sort = {rating : -1};
+                        break;
+                    case 'RATING_LOW_TO_HIGH':
+                    $scope.movieListQueries.sort = {rating : 1};
+                        break;
+                    case 'LATEST_TO_OLD':
+                    $scope.movieListQueries.sort = {year: -1};
+                        break;
+                    case 'OLD_TO_LATEST':
+                    $scope.movieListQueries.sort = {year: 1};
+                        break;
+                    default:
+                    $scope.movieListQueries.sort = {};
+                }
             }
-            $http.get('/getMovieList', {params: query} ).then(function (response) {
+            else if(filterType === 'LEFT_FILTER' && item) {
+                $scope.movieListQueries.filter = {year: item};
+            }
+            $http.get('/getMovieList', {params: $scope.movieListQueries} ).then(function (response) {
                 $scope.movieList = response.data;
             });
         };
