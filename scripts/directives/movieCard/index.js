@@ -1,16 +1,23 @@
 angular.module("tmt")
 .directive("movieCard", ['$interval', function($interval){
+    var getViewPortWidthRadius = function(){
+        if(window.outerWidth > 319 && window.outerWidth < 481){
+            return 25;
+        }
+        else 
+            return 15;
+    }
     var createCircle = function(scope){
         if(document.getElementById('circle-'+scope.index)){
             circle = Circles.create({
                 id:                  'circle-'+scope.index,
-                radius:              15,
+                radius:              getViewPortWidthRadius(),
                 value:               scope.movieInfo.rating * 10,
                 maxValue:            100,
                 width:               2,
                 text:                function(value){return value/10;},
                 colors:              ['#DEDEDE', '#50C878'],
-                duration:            500,
+                duration:            1,
                 wrpClass:            'circles-wrp',
                 textClass:           'circles-text',
                 valueStrokeClass:    'circles-valueStroke',

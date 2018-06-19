@@ -23,5 +23,67 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
         }
+        .tmt-filter-wrapper{
+            text-align: right;
+            select{
+                margin-bottom: 20px;
+                margin-right: 50px;
+                height: 25px;
+                padding-left: 10px;
+            }
+        }
     }
 }
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+/* Styles */
+.tmt-app{
+    .tmt-header{
+        font-size: 50px;
+    }
+    .tmt-body-wrapper{
+        padding-top: 150px;
+        .tmt-filter-wrapper{
+            select{
+                margin-right: 5px;
+                font-size: 18px;
+                width: 240px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+        .tmt-movie-list-wrapper{
+            width: 100%;
+            padding-left: 50px;
+            .movie-card-wrapper{
+                width: 450px;
+                height: 650px;
+                border: 2px solid #CCCCCC;
+                border-radius: 10px;
+                .circles-text{
+                    top: 4px !important;
+                }
+                img{
+                    width: 450px;
+                    height: 500px;
+                }
+                .movie-name{
+                    font-size: 36px;
+                    width: 360px;
+                }
+                .actor-details{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+}
+
+
