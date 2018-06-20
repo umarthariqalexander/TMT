@@ -1,6 +1,7 @@
 .tmt-app .tmt-app-header {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 1000; }
 
 .tmt-app .tmt-body-wrapper {
   padding-top: 120px; }
@@ -17,3 +18,58 @@
         color: black; }
     .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .tmt-movie-wrapper:hover {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .tmt-app .tmt-body-wrapper .tmt-filter-wrapper .filter-right {
+    margin-bottom: 20px;
+    margin-right: 50px;
+    height: 25px;
+    padding-left: 10px;
+    float: right; }
+  .tmt-app .tmt-body-wrapper .tmt-filter-wrapper .filter-left {
+    margin-bottom: 20px;
+    margin-right: 50px;
+    height: 25px;
+    position: relative;
+    left: 40px;
+    padding-left: 10px;
+    margin-left: 12px; }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+  .tmt-app .tmt-header {
+    font-size: 50px; }
+  .tmt-app .tmt-body-wrapper {
+    padding-top: 150px; }
+    .tmt-app .tmt-body-wrapper .tmt-filter-wrapper {
+      margin-bottom: 10px;
+      margin-top: 5px; }
+      .tmt-app .tmt-body-wrapper .tmt-filter-wrapper .filter-right {
+        margin-right: 5px;
+        font-size: 18px;
+        width: 240px;
+        height: 50px;
+        font-size: 24px; }
+      .tmt-app .tmt-body-wrapper .tmt-filter-wrapper .filter-left {
+        margin-right: 5px;
+        font-size: 18px;
+        width: 240px;
+        height: 50px;
+        font-size: 24px; }
+    .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper {
+      width: 100%;
+      padding-left: 50px; }
+      .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .movie-card-wrapper {
+        width: 450px;
+        height: 650px;
+        border: 2px solid #CCCCCC;
+        border-radius: 10px; }
+        .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .movie-card-wrapper .circles-text {
+          top: 4px !important; }
+        .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .movie-card-wrapper img {
+          width: 450px;
+          height: 500px; }
+        .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .movie-card-wrapper .movie-name {
+          font-size: 36px;
+          width: 360px; }
+        .tmt-app .tmt-body-wrapper .tmt-movie-list-wrapper .movie-card-wrapper .actor-details {
+          font-size: 24px; } }
