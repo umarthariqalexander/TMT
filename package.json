@@ -4,11 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npm run server & npm run tasks",
-    "server": "nodemon app.js",
-    "node-test":"node inspect app.js",
-    "build": "rimraf ./dist;",
-    "tasks": "gulp tasks"
+    "start": "rimraf ./dist & gulp tasks & nodemon app.js"
   },
   "author": "Umar",
   "license": "ISC",
