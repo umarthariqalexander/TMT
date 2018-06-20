@@ -89,4 +89,28 @@ app.delete('/deleteMovie', (req, res)=>{
   });
 });
 
+app.get('/getMenuLists', (req, res)=>{
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var tmt = db.db('canteen');
+      tmt.collection("order").find({}).toArray (function(err, result) {
+      if (err) {console.log(err); throw err;}
+      res.send(result);
+      db.close();
+    });
+  });
+});
+
+app.post('/insertMenu', (req, res)=>{
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var tmt = db.db('canteen');
+      tmt.collection("order").insertOne(req.body, function(err, result) {
+      if (err) {console.log(err); throw err;}
+      res.send('1 document inserted');
+      db.close();
+    });
+  });
+});
+
 app.listen(5000);
