@@ -12,6 +12,9 @@
   },
   "author": "Umar",
   "license": "ISC",
+  "engines": {
+    "node": "8.2.1"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
