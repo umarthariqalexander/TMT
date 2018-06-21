@@ -8,7 +8,6 @@ angular.module("tmt")
         $scope.movieList = {};
         $scope.movieForm = {};
         $scope.urlToDelete = {};
-        $scope.selectedFilter = {};
         $scope.movieFilters = [
             {desc: 'rating - high to low', filterId: 'RATING_HIGH_TO_LOW'}, 
             {desc: 'rating - low to high', filterId: 'RATING_LOW_TO_HIGH'},
@@ -32,30 +31,32 @@ angular.module("tmt")
             }
         };
         $scope.applyFilter = function(item, filterType){
-            if(filterType === 'RIGHT_FILTER'){
-                switch(item){
-                    case 'RATING_HIGH_TO_LOW':
-                    $scope.movieListQueries.sort = {rating : -1};
-                        break;
-                    case 'RATING_LOW_TO_HIGH':
-                    $scope.movieListQueries.sort = {rating : 1};
-                        break;
-                    case 'LATEST_TO_OLD':
-                    $scope.movieListQueries.sort = {year: -1};
-                        break;
-                    case 'OLD_TO_LATEST':
-                    $scope.movieListQueries.sort = {year: 1};
-                        break;
-                    default:
-                    $scope.movieListQueries.sort = {};
+            if(item){
+                if(filterType === 'RIGHT_FILTER'){
+                    switch(item){
+                        case 'RATING_HIGH_TO_LOW':
+                        $scope.movieListQueries.sort = {rating : -1};
+                            break;
+                        case 'RATING_LOW_TO_HIGH':
+                        $scope.movieListQueries.sort = {rating : 1};
+                            break;
+                        case 'LATEST_TO_OLD':
+                        $scope.movieListQueries.sort = {year: -1};
+                            break;
+                        case 'OLD_TO_LATEST':
+                        $scope.movieListQueries.sort = {year: 1};
+                            break;
+                        default:
+                        $scope.movieListQueries.sort = {};
+                    }
                 }
+                else if(filterType === 'LEFT_FILTER' && item) {
+                    $scope.movieListQueries.filter = {year: item};
+                }
+                $http.get('/getMovieList', {params: $scope.movieListQueries} ).then(function (response) {
+                    $scope.movieList = response.data;
+                });
             }
-            else if(filterType === 'LEFT_FILTER' && item) {
-                $scope.movieListQueries.filter = {year: item};
-            }
-            $http.get('/getMovieList', {params: $scope.movieListQueries} ).then(function (response) {
-                $scope.movieList = response.data;
-            });
         };
         $scope.hitImdbAPI = function () {
             if ($scope.movie.imdbUrl) {
