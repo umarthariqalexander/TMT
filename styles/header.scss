@@ -10,10 +10,16 @@
         left: 40%;
         top: 20px;
     }
-    .tmt-icon-cover{
-        // display: inline-block;
-    }
     img{
         width: 150px;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .tmt-header-wrapper{
+        padding: 10px 50px;
     }
 }
