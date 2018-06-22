@@ -43,7 +43,6 @@ and (max-device-width : 480px) {
         z-index: 1000;
     }
     .tmt-header-wrapper{
-        padding:30px 50px;
         .tmt-header{
             font-size: 58px;
             left: 26.5%;
@@ -77,6 +76,14 @@ and (max-device-width : 480px) {
                 position: fixed;
                 left: 35%;
                 top: 43%;
+                img{
+                    width: 300px;
+                }
+            }
+            .tmt-notfound-wrapper{
+                position: fixed;
+                left: 36%;
+                top: 35%;
                 img{
                     width: 300px;
                 }
