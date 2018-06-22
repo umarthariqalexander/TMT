@@ -1,5 +1,5 @@
 angular.module("tmt")
-    .controller("mainCtrl", function ($scope, $http) {
+    .controller("mainCtrl", function ($scope, $http, $window) {
         $scope.movie = {};
         $scope.default_keys = {
             youtube_data_api_key: 'AIzaSyCx1clO_m-n5RrM4kWHmlhhEFdYNeDv6Js',
@@ -23,6 +23,9 @@ angular.module("tmt")
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
             });
+        };
+        $scope.reloadPage = function(){
+            $window.location.reload();
         };
         $scope.getMovieList();
         $scope.getVideo = function () {

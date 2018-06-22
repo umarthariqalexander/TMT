@@ -3,6 +3,10 @@
 .tmt-app{
     .tmt-header{
         position: absolute;
+        cursor: pointer;
+    }
+    .tmt-icon-cover{
+        cursor: pointer;
     }
     .tmt-movie-wrapper{
         a{
@@ -13,9 +17,11 @@
         .tmt-filter-wrapper{
             .filter-right{
                 float: right;
+                padding-left: 5px;
             }
             .filter-left{
                 position: relative;
+                padding-left: 5px;
             }
         }
         .tmt-movie-list-wrapper{
@@ -72,6 +78,7 @@ and (max-device-width : 480px) {
                 display: inline-block;
                 margin-right: 20px;
                 margin-bottom: 20px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             .movie-card-wrapper{
                 width: 450px;
