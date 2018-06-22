@@ -14,9 +14,15 @@
                 </select>
         </div>
         <div class="tmt-movie-list-wrapper">
-                <div ng-repeat="movie in movieList" class="tmt-movie-wrapper">
+                <div ng-if="movieList.length > 0" ng-repeat="movie in movieList" class="tmt-movie-wrapper">
                       <a href="https://www.youtube.com/watch?v={{movie.urlId}}" target="_blank"><movie-card  movie-info="movie" index="$index"></movie-card></a>
                 </div>    
+                <div ng-if="movieList === undefined || !movieList || showLoader" class="tmt-loader-wrapper">
+                        <img src="./images/tmt-loader-50.gif" alt="">
+                </div>
+                <div ng-if="!showLoader && movieList.length === 0" class="tmt-notfound-wrapper">
+                        <img src="./images/not_found.png" alt="">
+                </div>
         </div>
     </div>
 </div>

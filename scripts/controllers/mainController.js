@@ -20,8 +20,10 @@ angular.module("tmt")
         };
         $scope.yearList = [2011,2012,2013,2014,2015,2016,2017,2018];
         $scope.getMovieList = function () {
+            $scope.showLoader = true;
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
+                $scope.showLoader = false;
             });
         };
         $scope.reloadPage = function(){
@@ -56,8 +58,11 @@ angular.module("tmt")
                 else if(filterType === 'LEFT_FILTER' && item) {
                     $scope.movieListQueries.filter = {year: item};
                 }
+                $scope.movieList = [];
+                $scope.showLoader = true;
                 $http.get('/getMovieList', {params: $scope.movieListQueries} ).then(function (response) {
                     $scope.movieList = response.data;
+                    $scope.showLoader = false;
                 });
             }
         };

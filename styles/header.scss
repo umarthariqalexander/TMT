@@ -15,11 +15,41 @@
     }
 }
 
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) {
+.icon-search{
+    display: none;
+ }
+ .icon-filter{
+     display: none;
+ }
+}
+
+
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
     .tmt-header-wrapper{
         padding: 10px 50px;
+    }
+    .icon-search{
+        display: inline;
+        font-size: 64px;
+        float:right;
+        position: relative;
+        bottom: 60px;
+        left: -70px;
+    }
+    .icon-filter{
+        display: inline;
+        font-size: 64px;
+        float:right;
+        position: relative;
+        bottom: 60px;
+        left: 90px;
     }
 }
