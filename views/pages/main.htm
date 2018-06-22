@@ -11,11 +11,15 @@
             <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER')">
                     <option selected disabled value>General Filters</option>
                     <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
-                </select>
+            </select>
+        </div>
+        <div class="modal-wrapper" ng-if="showModal">
+                <modal year-list="yearList" apply-filter="applyFilter" movie-filters="movieFilters" extra-class="'filter-modal'" close-modal="closeModal"></modal>
         </div>
         <div class="tmt-movie-list-wrapper">
                 <div ng-if="movieList.length > 0" ng-repeat="movie in movieList" class="tmt-movie-wrapper">
-                      <a href="https://www.youtube.com/watch?v={{movie.urlId}}" target="_blank"><movie-card  movie-info="movie" index="$index"></movie-card></a>
+                      <a href="https://www.youtube.com/watch?v={{movie.urlId}}" target="_blank">
+                        <movie-card  movie-info="movie" index="$index"></movie-card></a>
                 </div>    
                 <div ng-if="movieList === undefined || !movieList || showLoader" class="tmt-loader-wrapper">
                         <img src="./images/tmt-loader-50.gif" alt="">

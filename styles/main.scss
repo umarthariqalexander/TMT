@@ -5,6 +5,9 @@
         position: absolute;
         cursor: pointer;
     }
+    .tmt-app-header{
+        z-index: 500;
+    }
     .tmt-icon-cover{
         cursor: pointer;
     }
@@ -40,7 +43,6 @@ and (max-device-width : 480px) {
     .tmt-app-header{
         position: fixed;
         width: 100%;
-        z-index: 1000;
     }
     .tmt-header-wrapper{
         .tmt-header{
@@ -52,22 +54,21 @@ and (max-device-width : 480px) {
     .tmt-body-wrapper{
         padding-top: 150px;
         .tmt-filter-wrapper{
-            // margin-left: 35px;
-            // margin-bottom: 35px;
-            // margin-top: 5px;
-            // .filter-right{
-            //     margin-right: 25px;
-            //     font-size: 18px;
-            //     width: 240px;
-            //     height: 50px;
-            // }
-            // .filter-left{
-            //     margin-right: 5px;
-            //     font-size: 18px;
-            //     width: 240px;
-            //     height: 50px;
-            // }
             display: none;
+        }
+        .tmt-mobile-filter-wrapper{
+            .filter-right{
+                margin-right: 25px;
+                font-size: 18px;
+                width: 240px;
+                height: 50px;
+            }
+            .filter-left{
+                margin-right: 5px;
+                font-size: 18px;
+                width: 240px;
+                height: 50px;
+            }
         }
         .tmt-movie-list-wrapper{
             width: 97%;
@@ -116,6 +117,9 @@ and (max-device-width : 480px) {
             }
         }
     }
+    .filter-modal{
+        height: 50%;
+    }
 }
 }
 
@@ -126,7 +130,6 @@ and (min-device-width : 768px) {
     .tmt-app-header{
         position: fixed;
         width: 100%;
-        z-index: 1000;
     }
     .tmt-body-wrapper{
         padding-top: 100px;

@@ -26,6 +26,9 @@ angular.module("tmt")
                 $scope.showLoader = false;
             });
         };
+        $scope.closeModal = function(){
+            $scope.showModal = false;
+        }
         $scope.reloadPage = function(){
             $window.location.reload();
         };
