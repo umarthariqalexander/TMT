@@ -20,6 +20,7 @@ angular.module("tmt")
         };
         $scope.yearList = [2011,2012,2013,2014,2015,2016,2017,2018];
         $scope.getMovieList = function () {
+            $scope.movieList = [];
             $scope.showLoader = true;
             $http.get('/getMovieList').then(function (response) {
                 $scope.movieList = response.data;
@@ -33,7 +34,7 @@ angular.module("tmt")
             $scope.showModal = false;
         };
         $scope.reloadPage = function(){
-            $window.location.reload();
+            $scope.getMovieList();
         };
         $scope.getMovieList();
         $scope.getVideo = function () {

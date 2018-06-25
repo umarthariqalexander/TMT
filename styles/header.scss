@@ -5,13 +5,7 @@
     color: white;
     padding: 0px 50px;
     .tmt-header{
-        font-size: 28px;
         position: absolute;
-        left: 40%;
-        top: 20px;
-    }
-    img{
-        width: 150px;
     }
 }
 
@@ -25,6 +19,20 @@ and (min-device-width : 768px) {
  .icon-filter{
      display: none;
  }
+ .icon-menu{
+     display: none;
+ }
+ .tmt-header-wrapper{
+     padding: 5px 50px;
+    .tmt-header{
+        font-size: 32px;
+        left: 40%;
+        top: 20%;
+    }
+    img{
+        width: 120px;
+    }
+ }
 }
 
 
@@ -34,22 +42,44 @@ and (min-device-width : 768px) {
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
     .tmt-header-wrapper{
-        padding: 30px 40px;
+        padding: 10px 30px;
+        padding-right: 45px;
+       .tmt-header{
+           display: none;
+       }
+       .tmt-icon-cover{
+           position: relative;
+           left: 32%;
+       }
+       img{
+           width: 220px;
+       }
     }
     .icon-search{
         display: inline;
         font-size: 64px;
         float:right;
         position: relative;
-        bottom: 60px;
-        left: -70px;
+        bottom: 80px;
+        left: -110px;
+        z-index: 550;
     }
     .icon-filter{
         display: inline;
         font-size: 64px;
         float:right;
         position: relative;
-        bottom: 60px;
-        left: 90px;
+        bottom: 80px;
+        left: 75px;
+        z-index: 550;
+    }
+    .icon-menu{
+        display: inline;
+        font-size: 68px;
+        top: 20px;
+        left: 0px;
+        z-index: 550;
+        position: relative;
+        float:left;
     }
 }
