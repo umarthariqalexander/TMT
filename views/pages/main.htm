@@ -4,17 +4,19 @@
     </div>
     <div class="tmt-body-wrapper">
         <div class="tmt-filter-wrapper">
-            <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER')">
+            <select class="filter-left" ng-model="filter.selectedYearFilter" ng-change="applyFilter(filter.selectedYearFilter, 'LEFT_FILTER')">
                 <option selected disabled value>Year Filter</option>
                 <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
             </select>
-            <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER')">
+            <select class="filter-right" ng-model="filter.selectedFilter" ng-change="applyFilter(filter.selectedFilter, 'RIGHT_FILTER')">
                     <option selected disabled value>General Filters</option>
                     <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
             </select>
         </div>
         <div class="modal-wrapper">
-                <modal year-list="yearList" show-modal="showModal" apply-filter="applyFilter" movie-filters="movieFilters" extra-class="'filter-modal'" close-modal="closeModal"></modal>
+                <modal year-list="yearList" show-modal="showModal" apply-filter="applyFilter" movie-filters="movieFilters" 
+                all-filters="filter"
+                extra-class="'filter-modal'" close-modal="closeModal"></modal>
         </div>
         <div class="tmt-movie-list-wrapper">
                 <div ng-if="movieList.length > 0" ng-repeat="movie in movieList" class="tmt-movie-wrapper">

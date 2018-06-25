@@ -8,6 +8,7 @@ angular.module('tmt')
             yearList: '=',
             applyFilter: '=',
             movieFilters: '=',
+            allFilters: '=',
             closeModal: '&'
         },
         templateUrl: "./directives/modal/index.htm",

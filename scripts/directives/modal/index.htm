@@ -6,7 +6,7 @@
                    <div class="modal-year-filter-text">
                        <span>Year Filter</span>
                    </div>
-                    <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER');">
+                    <select class="filter-left" ng-model="allFilters.selectedYearFilter" ng-change="applyFilter(allFilters.selectedYearFilter, 'LEFT_FILTER');">
                             <option selected disabled value>Select Year</option>
                             <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
                     </select> 
@@ -15,7 +15,7 @@
                     <div>
                             <span class="general-filter-text">General Filter</span>
                     </div>
-                    <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER');">
+                    <select class="filter-right" ng-model="allFilters.selectedFilter" ng-change="applyFilter(allFilters.selectedFilter, 'RIGHT_FILTER');">
                             <option selected disabled value>Select Filter</option>
                             <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
                     </select>

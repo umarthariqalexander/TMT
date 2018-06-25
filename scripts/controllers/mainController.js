@@ -18,6 +18,10 @@ angular.module("tmt")
             sort: {},
             filter: {}
         };
+        $scope.filter = {
+            selectedYearFilter: '',
+            selectedFilter: ''
+        };
         $scope.yearList = [2011,2012,2013,2014,2015,2016,2017,2018];
         $scope.getMovieList = function () {
             $scope.movieList = [];
@@ -34,6 +38,10 @@ angular.module("tmt")
             $scope.showModal = false;
         };
         $scope.reloadPage = function(){
+            $scope.filter = {
+                selectedYearFilter: '',
+                selectedFilter: ''
+            };
             $scope.getMovieList();
         };
         $scope.getMovieList();
@@ -61,9 +69,11 @@ angular.module("tmt")
                         default:
                         $scope.movieListQueries.sort = {};
                     }
+                    $scope.filter.selectedFilter = item;
                 }
                 else if(filterType === 'LEFT_FILTER' && item) {
                     $scope.movieListQueries.filter = {year: item};
+                    $scope.filter.selectedYearFilter = item;
                 }
                 $scope.movieList = [];
                 $scope.showLoader = true;
