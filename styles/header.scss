@@ -49,10 +49,10 @@ and (max-device-width : 480px) {
        }
        .tmt-icon-cover{
            position: relative;
-           left: 32%;
+           left: 27%;
        }
        img{
-           width: 220px;
+           width: 230px;
        }
     }
     .icon-search{
@@ -63,23 +63,26 @@ and (max-device-width : 480px) {
         bottom: 80px;
         left: -110px;
         z-index: 550;
+        display: none;
     }
     .icon-filter{
         display: inline;
-        font-size: 64px;
-        float:right;
+        font-size: 74px;
+        float: right;
         position: relative;
-        bottom: 80px;
-        left: 75px;
+        bottom: 100px;
+        left: 20px;
         z-index: 550;
+        padding: 15px;
     }
     .icon-menu{
         display: inline;
-        font-size: 68px;
-        top: 20px;
+        font-size: 78px;
+        top: 0px;
         left: 0px;
         z-index: 550;
         position: relative;
         float:left;
+        padding: 15px;
     }
 }

@@ -15,7 +15,6 @@
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
-        padding-top:150px;
     }
 
 }
@@ -26,6 +25,11 @@
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
     .tmt-modal-content{
-        padding-top: 150px;
+        .icon-close{
+            float: right;
+        }
+        .tmt-mobile-filter-wrapper{
+            margin-top: 20px;
+        }
     }
 }
