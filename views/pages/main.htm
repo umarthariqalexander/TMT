@@ -13,8 +13,8 @@
                     <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
             </select>
         </div>
-        <div class="modal-wrapper" ng-if="showModal">
-                <modal year-list="yearList" apply-filter="applyFilter" movie-filters="movieFilters" extra-class="'filter-modal'" close-modal="closeModal"></modal>
+        <div class="modal-wrapper">
+                <modal year-list="yearList" show-modal="showModal" apply-filter="applyFilter" movie-filters="movieFilters" extra-class="'filter-modal'" close-modal="closeModal"></modal>
         </div>
         <div class="tmt-movie-list-wrapper">
                 <div ng-if="movieList.length > 0" ng-repeat="movie in movieList" class="tmt-movie-wrapper">

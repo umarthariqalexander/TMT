@@ -1,13 +1,12 @@
-<div class="tmt-modal">
+<div class="tmt-modal" ng-if="showModal">
     <div class="tmt-modal-content" ng-class="extraClass">
-           <span> I am Modal</span>
-           <!-- <span class="icon-close"></span> -->
+           <span ng-click="closeModal()()" class="icon-close"></span>
            <div class="tmt-mobile-filter-wrapper">
-                <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER'); closeModal();">
+                <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER');">
                     <option selected disabled value>Year Filter</option>
                     <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
                 </select>
-                <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER');  closeModal();">
+                <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER');">
                         <option selected disabled value>General Filters</option>
                         <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
                 </select>

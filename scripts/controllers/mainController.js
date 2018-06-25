@@ -26,9 +26,12 @@ angular.module("tmt")
                 $scope.showLoader = false;
             });
         };
+        $scope.openModal = function(){
+            $scope.showModal = true;
+        };
         $scope.closeModal = function(){
             $scope.showModal = false;
-        }
+        };
         $scope.reloadPage = function(){
             $window.location.reload();
         };

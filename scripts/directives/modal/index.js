@@ -3,18 +3,18 @@ angular.module('tmt')
     return {
         restrict: 'E',
         scope:{
+            showModal: '=',
             extraClass: '=',
             yearList: '=',
             applyFilter: '=',
             movieFilters: '=',
-            closeModal: '='
+            closeModal: '&'
         },
         templateUrl: "./directives/modal/index.htm",
         link: function(scope, elem, attr, parentCtrl){
-            // scope.applyMobileFilter = function(item, filterType){
-            //     scope.applyFilter(item, filterType);
-            // }
-            debugger;
+            // scope.$watch('showModal', function(value){
+            //     console.log(value);
+            // });
         }
     }
 });
