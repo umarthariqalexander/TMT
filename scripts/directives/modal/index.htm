@@ -2,14 +2,24 @@
     <div class="tmt-modal-content" ng-class="extraClass">
            <span ng-click="closeModal()()" class="icon-close"></span>
            <div class="tmt-mobile-filter-wrapper">
-                <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER');">
-                    <option selected disabled value>Year Filter</option>
-                    <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
-                </select>
-                <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER');">
-                        <option selected disabled value>General Filters</option>
-                        <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
-                </select>
+               <div class="modal-year-filter">
+                   <div class="modal-year-filter-text">
+                       <span>Year Filter</span>
+                   </div>
+                    <select class="filter-left" ng-model="selectedYearFilter" ng-change="applyFilter(selectedYearFilter, 'LEFT_FILTER');">
+                            <option selected disabled value>Select Year</option>
+                            <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
+                    </select> 
+               </div>
+               <div class="general-year-filter">
+                    <div>
+                            <span class="general-filter-text">General Filter</span>
+                    </div>
+                    <select class="filter-right" ng-model="selectedFilter" ng-change="applyFilter(selectedFilter, 'RIGHT_FILTER');">
+                            <option selected disabled value>Select Filter</option>
+                            <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
+                    </select>
+                </div>
             </div>
     </div>
 </div>

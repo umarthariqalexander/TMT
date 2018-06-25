@@ -27,9 +27,13 @@ and (max-device-width : 480px) {
     .tmt-modal-content{
         .icon-close{
             float: right;
+            font-size: 50px;
         }
         .tmt-mobile-filter-wrapper{
-            margin-top: 20px;
+            margin-top: 100px;
+        }
+        .modal-year-filter{
+            margin-bottom: 100px;
         }
     }
 }

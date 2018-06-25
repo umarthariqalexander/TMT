@@ -59,15 +59,23 @@ and (max-device-width : 480px) {
         .tmt-mobile-filter-wrapper{
             .filter-right{
                 margin-right: 25px;
-                font-size: 18px;
-                width: 240px;
-                height: 50px;
+                font-size: 38px;
+                width: 100%;
+                background-color: #EEE;
+                height: 80px;
             }
             .filter-left{
                 margin-right: 5px;
-                font-size: 18px;
-                width: 240px;
-                height: 50px;
+                font-size: 38px;
+                width: 100%;
+                background-color: #EEE;
+                height: 80px;
+            }
+            .modal-year-filter-text{
+                font-size: 30px;
+            }
+            .general-filter-text{
+                font-size: 30px;
             }
         }
         .tmt-movie-list-wrapper{
