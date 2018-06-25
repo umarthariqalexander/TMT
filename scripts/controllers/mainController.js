@@ -11,8 +11,8 @@ angular.module("tmt")
         $scope.movieFilters = [
             {desc: 'rating - high to low', filterId: 'RATING_HIGH_TO_LOW'}, 
             {desc: 'rating - low to high', filterId: 'RATING_LOW_TO_HIGH'},
-            {desc: 'year - latest to old', filterId: 'LATEST_TO_OLD'},
-            {desc: 'year - old to latest', filterId: 'OLD_TO_LATEST'}
+            // {desc: 'year - latest to old', filterId: 'LATEST_TO_OLD'},
+            // {desc: 'year - old to latest', filterId: 'OLD_TO_LATEST'}
         ];
         $scope.movieListQueries = {
             sort: {},
