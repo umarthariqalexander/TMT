@@ -78,6 +78,11 @@ and (max-device-width : 480px) {
                 font-size: 30px;
             }
         }
+        .mobile-filter-desc{
+            font-size: 34px;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
         .tmt-movie-list-wrapper{
             width: 97%;
             padding-left: 30px;
@@ -141,6 +146,9 @@ and (min-device-width : 768px) {
     }
     .tmt-body-wrapper{
         padding-top: 100px;
+        .mobile-filter-desc{
+            display: none;
+        }
         .tmt-movie-list-wrapper{
             margin: auto;
             width: 95%;
