@@ -42,6 +42,10 @@ angular.module("tmt")
                 selectedYearFilter: '',
                 selectedFilter: ''
             };
+            $scope.movieListQueries = {
+                filter: '',
+                sort: ''
+            }
             $scope.getMovieList();
         };
         $scope.getMovieList();
