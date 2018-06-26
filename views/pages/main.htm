@@ -13,11 +13,11 @@
                     <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
             </select>
         </div>
-        <div class="modal-wrapper">
+        <!-- <div class="modal-wrapper">
                 <modal year-list="yearList" show-modal="showModal" apply-filter="applyFilter" movie-filters="movieFilters" 
                 all-filters="filter"
                 extra-class="'filter-modal'" close-modal="closeModal"></modal>
-        </div>
+        </div> -->
         <div class="mobile-filter-desc" ng-if="filter.selectedYearFilter && movieList.length > 0">
                 <span>Listing the movies on the year of <b>{{filter.selectedYearFilter}}</b>...</span>
         </div>

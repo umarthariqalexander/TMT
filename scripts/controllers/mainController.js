@@ -3,7 +3,7 @@ angular.module("tmt")
         $scope.movie = {};
         $scope.default_keys = {
             youtube_data_api_key: 'AIzaSyCx1clO_m-n5RrM4kWHmlhhEFdYNeDv6Js',
-            omdb_api_key: 'PlzBanMe'
+            omdb_api_key: '1d4b640d'
         }
         $scope.movieList = {};
         $scope.movieForm = {};
@@ -93,12 +93,16 @@ angular.module("tmt")
                 var imdb_api_url = `http://www.omdbapi.com/?i=${$scope.movie.imdbUrl}&apikey=${imdb_api_key}`;
                 $http.get(imdb_api_url).then(function (response) {
                     console.log(response);
-                    $scope.movie.posterUrl = response.data.Poster;
                     $scope.movie.name = response.data.Title;
-                    $scope.movie.rating = response.data.imdbRating;
                     $scope.movie.year = response.data.Year;
-                    $scope.movie.actors = response.data.Actors;
+                    $scope.movie.genre = response.data.Genre;
                     $scope.movie.director = response.data.Director;
+                    $scope.movie.actors = response.data.Actors;
+                    $scope.movie.posterUrl = response.data.Poster;
+                    $scope.movie.rating = response.data.imdbRating;
+                    $scope.movie.imdbID = response.data.imdbID;
+                    $scope.movie.boxOffice = response.data.BoxOffice;
+                    $scope.movie.production = response.data.Production;
                 });
             }
         };
@@ -116,7 +120,11 @@ angular.module("tmt")
                     rating: rating,
                     director: $scope.movie.director,
                     year: $scope.movie.year,
-                    posterUrl: $scope.movie.posterUrl
+                    posterUrl: $scope.movie.posterUrl,
+                    genre: $scope.movie.genre,
+                    imdbID: $scope.movie.imdbID,
+                    production: $scope.movie.production,
+                    boxOffice: $scope.movie.boxOffice
                 }
                 let data = movieObject;
                 console.log(data);
