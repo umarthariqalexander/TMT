@@ -89,28 +89,25 @@ app.delete('/deleteMovie', (req, res)=>{
   });
 });
 
-app.get('/getMenuLists', (req, res)=>{
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var tmt = db.db('canteen');
-      tmt.collection("order").find({}).toArray (function(err, result) {
-      if (err) {console.log(err); throw err;}
-      res.send(result);
-      db.close();
-    });
-  });
-});
-
-app.post('/insertMenu', (req, res)=>{
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    var tmt = db.db('canteen');
-      tmt.collection("order").insertOne(req.body, function(err, result) {
-      if (err) {console.log(err); throw err;}
-      res.send('1 document inserted');
-      db.close();
-    });
-  });
+app.get('/userDetails', (req, res)=>{
+  var response = {
+    "success": true,
+    "errorCode": null,
+    "errorMessage": null,
+    "value": {
+      "userId": 1129,
+      "userName": "Internal User FullName 007",
+      "userEmail": "internal_user_007@mailinator.com",
+      "userPhoneNumber": "96863 70931",
+      "userType": {
+        "userTypeId": "12",
+        "userTypeCode": "B2BFT",
+        "userTypeDescriptionEn": "B2BFT User",
+        "userTypeDescriptionId": "Sales"
+      }
+    }
+  };
+  res.json(response);
 });
 
 app.listen(5000);
