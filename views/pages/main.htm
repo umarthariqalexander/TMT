@@ -1,6 +1,7 @@
 <div class="tmt-app">
+        <mobile-menu show-menu="showMobileLeftMenu" hide-menu="closeMobileLeftMenu"></mobile-menu>
     <div class="tmt-app-header">
-        <tmt-header></tmt-header>
+        <tmt-header open-menu="openMobileLeftMenu" show-filter="true" show-menu="true"></tmt-header>
     </div>
     <div class="tmt-body-wrapper">
         <div class="tmt-filter-wrapper">
@@ -18,7 +19,7 @@
                 all-filters="filter"
                 extra-class="'filter-modal'" close-modal="closeModal"></modal>
         </div>
-        <div class="mobile-filter-desc" ng-if="filter.selectedYearFilter && movieList.length > 0">
+       <div class="mobile-filter-desc" ng-if="filter.selectedYearFilter && movieList.length > 0">
                 <span>Listing the movies on the year of <b>{{filter.selectedYearFilter}}</b>...</span>
         </div>
         <div class="tmt-movie-list-wrapper">

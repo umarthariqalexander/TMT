@@ -8,6 +8,7 @@ angular.module("tmt")
         $scope.movieList = {};
         $scope.movieForm = {};
         $scope.urlToDelete = {};
+        $scope.showMobileLeftMenu = false;
         $scope.movieFilters = [
             {desc: 'rating - high to low', filterId: 'RATING_HIGH_TO_LOW'}, 
             {desc: 'rating - low to high', filterId: 'RATING_LOW_TO_HIGH'},
@@ -33,6 +34,7 @@ angular.module("tmt")
         };
         $scope.openModal = function(){
             $scope.showModal = true;
+            $scope.$apply();
         };
         $scope.closeModal = function(){
             $scope.showModal = false;
@@ -53,6 +55,12 @@ angular.module("tmt")
             if ($scope.movie.videoUrl) {
                 $scope.movie.fullVideoUrl = "https://www.youtube.com/embed/" + $scope.movie.videoUrl;
             }
+        };
+        $scope.openMobileLeftMenu = function(){
+            $scope.showMobileLeftMenu = true;
+        };
+        $scope.closeMobileLeftMenu = function(){
+            $scope.showMobileLeftMenu = false;
         };
         $scope.applyFilter = function(item, filterType){
             if(item){

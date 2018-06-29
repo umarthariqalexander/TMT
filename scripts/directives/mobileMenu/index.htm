@@ -1,0 +1,16 @@
+<div ng-if="showMenu" class="mobile-menu-wrapper">
+    <ul>
+        <li ng-class="{'selected': currentPath === '/'}" ng-click="hideMenu()">
+                <a href="/">
+                    <i class="icon-home3" ng-class="{'selected': currentPath === '/'}"></i>
+                    <span class="mobile-header-icon-text">Home</span>
+                </a>
+        </li>
+        <li ng-class="{'selected': currentPath === '/about'}" ng-click="hideMenu()">
+                <a href="#!about">
+                    <img src="./images/title_icon.png" alt="">
+                    <span class="mobile-header-icon-text">About</span>
+                </a>
+        </li>
+    </ul>
+</div>

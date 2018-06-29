@@ -8,6 +8,9 @@ app.config(function($routeProvider){
     .when("/admin", {
         templateUrl: "pages/admin.htm"
     })
+    .when("/about", {
+        templateUrl: "pages/about.htm"
+    })
 });
 
 angular.module("tmt").filter('trustThisUrl', ["$sce", function ($sce) {
