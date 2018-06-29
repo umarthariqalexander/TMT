@@ -4,6 +4,7 @@ angular.module("tmt")
         scope: {
             showMenu: '=',
             showFilter: '=',
+            reloadPage: '=',
             openMenu: '&'
         },
         templateUrl: "./directives/header/index.htm"
