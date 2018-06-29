@@ -9,7 +9,9 @@
         z-index: 500;
     }
     .tmt-icon-cover{
-        cursor: pointer;
+        img{
+            cursor: pointer;
+        }
     }
     .tmt-movie-wrapper{
         a{
