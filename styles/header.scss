@@ -43,13 +43,13 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
     .tmt-header-wrapper{
         padding: 10px 30px;
-        padding-right: 45px;
+        padding-right: 5px;
        .tmt-header{
            display: none;
        }
        .tmt-icon-cover{
            position: relative;
-           left: 27%;
+           left: 26%;
        }
        img{
            width: 230px;
@@ -74,6 +74,8 @@ and (max-device-width : 480px) {
         left: 20px;
         z-index: 550;
         padding: 15px;
+        padding-left: 150px;
+        padding-right: 60px;
     }
     .icon-menu{
         display: inline;

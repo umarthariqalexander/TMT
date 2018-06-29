@@ -12,7 +12,6 @@
     .tmt-modal-content{
         background-color: #fefefe;
         margin: 20% auto; /* 15% from the top and centered */
-        padding: 20px;
         border: 1px solid #888;
         width: 80%;
     }
@@ -28,9 +27,11 @@ and (max-device-width : 480px) {
         .icon-close{
             float: right;
             font-size: 50px;
+            padding: 30px;
         }
         .tmt-mobile-filter-wrapper{
             margin-top: 100px;
+            padding: 20px;
         }
         .modal-year-filter{
             margin-bottom: 100px;

@@ -5,7 +5,11 @@ angular.module("tmt")
             showMenu: '=',
             showFilter: '=',
             reloadPage: '=',
-            openMenu: '&'
+            openMenu: '&',
+            showModel:'='
+        },
+        link: function(scope, attr, elem){
+            console.log(scope);
         },
         templateUrl: "./directives/header/index.htm"
     }
