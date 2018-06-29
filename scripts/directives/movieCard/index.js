@@ -5,7 +5,14 @@ angular.module("tmt")
             return 25;
         }
         else 
-            return 15;
+            return 17;
+    }
+    var getAnimationTime = function(){
+        if(window.outerWidth > 319 && window.outerWidth < 481){
+            return 0;
+        }
+        else 
+            return 1/10;
     }
     var createCircle = function(scope){
         if(document.getElementById('circle-'+scope.index)){
@@ -17,7 +24,7 @@ angular.module("tmt")
                 width:               2,
                 text:                function(value){return value/10;},
                 colors:              ['#DEDEDE', '#50C878'],
-                duration:            1,
+                duration:            getAnimationTime(),
                 wrpClass:            'circles-wrp',
                 textClass:           'circles-text',
                 valueStrokeClass:    'circles-valueStroke',
@@ -37,7 +44,7 @@ angular.module("tmt")
         link: function(scope, elem ,attr){
            scope.promise = $interval(function(){
                createCircle(scope);
-            }, 500);
+            }, 0);
         },
         templateUrl: "./directives/movieCard/index.htm"
     }
