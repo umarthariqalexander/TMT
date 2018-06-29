@@ -8,9 +8,11 @@
         </li>
         <li ng-class="{'selected': currentPath === '/about'}" ng-click="hideMenu()">
                 <a href="#!about">
-                    <img src="./images/title_icon.png" alt="">
+                    <img ng-if="currentPath !== '/about'" src="./images/title_icon.png" alt="">
+                    <img ng-if="currentPath === '/about'" src="./images/mobile_selected_header.png" alt="">
                     <span class="mobile-header-icon-text">About</span>
                 </a>
         </li>
+        <div class="version">Version 1.0.0</div>
     </ul>
 </div>

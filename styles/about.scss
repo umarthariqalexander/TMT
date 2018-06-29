@@ -4,4 +4,18 @@
         position: fixed;
         top: 0;
     }
+    .about-content-wrapper{
+        padding: 35px;
+        padding-top: 150px;
+        font-size: 14px;
+        p{
+            margin-bottom: 50px;
+        }
+        div{
+            margin-bottom: 20px;
+        }
+        div:first-child{
+            margin-bottom: 10px;
+        }
+    }
 }
