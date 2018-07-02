@@ -1,0 +1,48 @@
+.mobile-menu-wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 600;
+  background-color: white;
+  width: 80%; }
+  .mobile-menu-wrapper ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 100vh; }
+    .mobile-menu-wrapper ul li {
+      font-size: 55px;
+      padding-left: 40px;
+      cursor: pointer; }
+      .mobile-menu-wrapper ul li a {
+        line-height: 200px;
+        padding-top: 80px;
+        padding-left: 0px;
+        padding-right: 340px;
+        padding-bottom: 60px; }
+      .mobile-menu-wrapper ul li .mobile-header-icon-text {
+        margin-left: 50px; }
+      .mobile-menu-wrapper ul li .icon-home3 {
+        font-size: 75px;
+        position: relative;
+        top: 5px;
+        margin-left: 30px;
+        color: #AAA; }
+      .mobile-menu-wrapper ul li .selected {
+        color: #87BA5C; }
+      .mobile-menu-wrapper ul li img {
+        width: 70px;
+        margin-left: 30px;
+        top: 8px;
+        height: 90px;
+        position: relative; }
+    .mobile-menu-wrapper ul .selected {
+      background-color: #EEEEEE; }
+  .mobile-menu-wrapper a {
+    color: black;
+    text-decoration: none; }
+  .mobile-menu-wrapper .version {
+    font-size: 50px;
+    position: fixed;
+    bottom: 150px;
+    text-align: center;
+    width: 80%; }

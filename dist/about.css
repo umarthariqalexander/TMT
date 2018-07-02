@@ -1,0 +1,15 @@
+.about-wrapper .tmt-app-header {
+  width: 100%;
+  position: fixed;
+  top: 0; }
+
+.about-wrapper .about-content-wrapper {
+  padding: 35px;
+  padding-top: 150px;
+  font-size: 14px; }
+  .about-wrapper .about-content-wrapper p {
+    margin-bottom: 50px; }
+  .about-wrapper .about-content-wrapper div {
+    margin-bottom: 20px; }
+  .about-wrapper .about-content-wrapper div:first-child {
+    margin-bottom: 10px; }

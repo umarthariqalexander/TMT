@@ -9,7 +9,7 @@ angular.module("tmt")
             showModel:'='
         },
         link: function(scope, attr, elem){
-            console.log(scope);
+            // console.log(scope);
         },
         templateUrl: "./directives/header/index.htm"
     }

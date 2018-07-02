@@ -10,6 +10,14 @@
     border: 1px solid $grey_eee;
     border-radius: 4px;
     vertical-align: bottom;
+    .image-container{
+        span{
+            font-size: 50px;
+            position: relative;
+            top: 120px;
+            left: 80px;
+        }
+    }
     img{
         width: 220px;
         height: 275px;
@@ -44,5 +52,15 @@
     }
     .circles-wrp{
         top: -7px;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) {
+    .movie-card-wrapper{
+        .image-container{
+            height: 275px;
+        }
     }
 }

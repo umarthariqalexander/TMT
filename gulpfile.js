@@ -12,13 +12,13 @@ gulp.task('tasks', function(){
 gulp.task('fontmin', () =>
     gulp.src(__dirname+'/styles/myfonts/*.ttf')
         .pipe(fontmin())
-        .pipe(gulp.dest('dist/fonts'))
+        .pipe(gulp.dest('public/fonts'))
 );
 
 gulp.task('sass', function(){
     return gulp.src('./styles/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('sass:watch', function () {

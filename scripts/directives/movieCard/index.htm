@@ -1,15 +1,12 @@
 <div class="movie-card-wrapper">
     <div class="image-container">
-        <img src="{{movieInfo.posterUrl}}" alt="">
+        <img ng-src="{{movieInfo.posterUrl || '/images/image-not-found.png' }}" onerror="this.src='/images/image-not-found.png'">
     </div>
     <div class="movie-info-container">
         <div class="movie-name-rating">
             <div class="movie-name">
                 <span>{{movieInfo.movieName}}</span>
             </div>
-            <!-- <div class="rating">
-                <span ng-repeat="x in movieRating track by $index" class="fa fa-star" ng-class="{'checked': x.mark}"></span>
-            </div> -->
             <div class="rating">
                 <div id="{{'circle-'+index}}" class="circle"></div>
             </div>
