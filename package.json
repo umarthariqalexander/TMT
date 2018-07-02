@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "rimraf ./dist & gulp tasks & node app.js"
+    "start": "rimraf ./public & gulp tasks & node app.js"
   },
   "author": "Umar",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.4",
     "gulp-fontmin": "^0.7.4",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-concat": "^2.6.1"
   }
 }

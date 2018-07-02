@@ -1,5 +1,5 @@
 angular.module("tmt")
-    .controller("mainCtrl", function ($scope, $http, $window) {
+    .controller("mainCtrl", ["$scope", "$http", "$window", function ($scope, $http, $window) {
         $scope.movie = {};
         $scope.default_keys = {
             youtube_data_api_key: 'AIzaSyCx1clO_m-n5RrM4kWHmlhhEFdYNeDv6Js',
@@ -170,4 +170,4 @@ angular.module("tmt")
                 document.getElementById('resultOfDeleteOperation').innerHTML = '<span style="color: orange;">Invalid Password. You cant perform this operation</span>';
             }
         };
-    });
+    }]);
