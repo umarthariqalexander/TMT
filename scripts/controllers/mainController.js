@@ -34,7 +34,6 @@ angular.module("tmt")
         };
         $scope.openModal = function(){
             $scope.showModal = true;
-            $scope.$apply();
         };
         $scope.closeModal = function(){
             $scope.showModal = false;

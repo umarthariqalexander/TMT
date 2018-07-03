@@ -5,14 +5,21 @@
     </div>
     <div class="tmt-body-wrapper">
         <div class="tmt-filter-wrapper">
-            <select class="filter-left" ng-model="filter.selectedYearFilter" ng-change="applyFilter(filter.selectedYearFilter, 'LEFT_FILTER')">
-                <option selected disabled value>Year Filter</option>
-                <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
-            </select>
-            <select class="filter-right" ng-model="filter.selectedFilter" ng-change="applyFilter(filter.selectedFilter, 'RIGHT_FILTER')">
-                    <option selected disabled value>General Filters</option>
-                    <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
-            </select>
+                <div class="custom-select-wrapper filter-left">
+                        <select class="custom-dropdown" ng-model="filter.selectedYearFilter" ng-change="applyFilter(filter.selectedYearFilter, 'LEFT_FILTER')">
+                                <option selected disabled value>Year Filter</option>
+                                <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
+                                </select>
+                                <i class="custom-select-arrow icon-chevron-thin-down"></i>
+                </div>
+                <div class="custom-select-wrapper filter-right">
+                        <select class="custom-dropdown" ng-model="filter.selectedFilter" 
+                        ng-change="applyFilter(filter.selectedFilter, 'RIGHT_FILTER')">
+                                        <option selected disabled value>General Filters</option>
+                                        <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
+                        </select>
+                        <i class="custom-select-arrow icon-chevron-thin-down"></i>
+                </div>
         </div>
         <div class="modal-wrapper">
                 <modal year-list="yearList" show-modal="showModal" apply-filter="applyFilter" movie-filters="movieFilters" 

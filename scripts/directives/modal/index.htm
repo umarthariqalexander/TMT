@@ -6,19 +6,25 @@
                    <div class="modal-year-filter-text">
                        <span>Year Filter</span>
                    </div>
-                    <select class="filter-left" ng-model="allFilters.selectedYearFilter" ng-change="applyFilter(allFilters.selectedYearFilter, 'LEFT_FILTER');closeModal()();">
-                            <option selected disabled value>Select Year</option>
-                            <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
-                    </select> 
+                   <div class="custom-select-wrapper filter-left">
+                        <select class="custom-dropdown" ng-model="allFilters.selectedYearFilter" ng-change="applyFilter(allFilters.selectedYearFilter, 'LEFT_FILTER');closeModal()();">
+                                <option selected disabled value>Select Year</option>
+                                <option ng-repeat="x in yearList" value="{{x}}">{{x}}</option>
+                        </select> 
+                        <i class="custom-select-arrow icon-chevron-thin-down"></i>
+                   </div>
                </div>
                <div class="general-year-filter">
                     <div>
                             <span class="general-filter-text">General Filter</span>
                     </div>
-                    <select class="filter-right" ng-model="allFilters.selectedFilter" ng-change="applyFilter(allFilters.selectedFilter, 'RIGHT_FILTER');closeModal()();">
-                            <option selected disabled value>Select Filter</option>
-                            <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
-                    </select>
+                    <div class="custom-select-wrapper filter-left">
+                            <select class="custom-dropdown" ng-model="allFilters.selectedFilter" ng-change="applyFilter(allFilters.selectedFilter, 'RIGHT_FILTER');closeModal()();">
+                                    <option selected disabled value>Select Filter</option>
+                                    <option ng-repeat="x in movieFilters" value="{{x.filterId}}">{{x.desc}}</option>
+                            </select>
+                            <i class="custom-select-arrow icon-chevron-thin-down"></i>
+                    </div>
                 </div>
             </div>
     </div>
